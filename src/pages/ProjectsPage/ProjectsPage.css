@@ -1,38 +1,27 @@
+body {
+  margin: 0 !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+
 .projects-container {
-    padding: 50px 20px !important;
-    background-color: #f9f9f9 !important;
-  }
-  
-  .projects-heading {
-    text-align: center !important;
-    margin-bottom: 40px !important;
-    color: #333 !important;
-  }
-  
-  .projects-grid {
-    justify-content: center !important;
-  }
-  
-  .project-card {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-10px) !important;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
-  }
-  
-  .project-title {
-    font-weight: bold !important;
-    margin-bottom: 10px !important;
-  }
-  
-  .project-description {
-    margin-bottom: 15px !important;
-    color: #555 !important;
-  }
-  
-  .project-link {
-    margin-top: 10px !important;
-  }
-  
+  padding: 40px 20px !important;
+  background-color: #f9f9f9 !important;
+}
+
+.projects-heading {
+  color: #333 !important;
+  margin-bottom: 30px !important;
+}
+
+img {
+  cursor: pointer !important;
+  transition: transform 0.3s ease !important;
+}
+
+img:hover {
+  transform: scale(1.05) !important;
+}
+
+.pagination {
+  margin-top: 10px !important;
+}
