@@ -1,0 +1,56 @@
+.navbar-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  
+  .logo-container {
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  .nav-links {
+    display: flex !important;
+    gap: 15px !important;
+  }
+  
+  .nav-links button {
+    font-weight: 500 !important;
+    transition: all 0.3s ease-in-out !important;
+  }
+  
+  .nav-links button:hover {
+    color: var(--mui-palette-primary-main) !important; 
+  }
+  
+  .menu-icon {
+    display: none !important;
+  }
+  
+  .drawer-list {
+    width: 250px !important;
+  }
+  
+  .drawer-list .MuiListItem-button {
+    transition: all 0.3s ease !important;
+  }
+  
+  .drawer-list .MuiListItem-button:hover {
+    background-color: var(--mui-palette-primary-main) !important;
+    color: var(--mui-palette-primary-contrastText) !important; 
+  }
+  
+  .drawer-list .MuiListItem-button.active {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  @media (max-width: 600px) {
+    .nav-links {
+      display: none !important;
+    }
+  
+    .menu-icon {
+      display: block !important;
+    }
+  }
+  

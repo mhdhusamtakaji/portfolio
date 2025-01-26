@@ -1,0 +1,38 @@
+/* Responsive Spacing and Typography */
+body {
+    margin: 0 !important;
+    font-family: 'Roboto', sans-serif !important;
+  }
+  
+  .home-container {
+    padding: 20px !important;
+    width: 100% !important;
+  }
+  
+  .hero-section {
+    margin-bottom: 60px !important;
+  }
+  
+  .work-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  }
+  
+  .work-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  @media (max-width: 600px) {
+    .hero-heading {
+      font-size: 2rem !important;
+    }
+  
+    .hero-subheading {
+      font-size: 1.2rem !important;
+    }
+  
+    .hero-description {
+      font-size: 1rem !important;
+    }
+  }
+  
