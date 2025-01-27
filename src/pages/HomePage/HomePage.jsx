@@ -15,9 +15,12 @@ import {
 } from 'react-icons/fa';
 import { SiMysql, SiMui, SiJavascript, SiCss3, SiMailtrap, SiOpenai } from 'react-icons/si';
 import { useTheme } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
+import HeroImage from '../../assets/images/hero.jpg';
 
 const HomePage = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
 
   return (
     <Box
@@ -25,40 +28,100 @@ const HomePage = () => {
         backgroundColor: theme.palette.background.default,
         color: theme.palette.text.primary,
         px: { xs: 2, sm: 4 },
-        py: { xs: 4, md: 6 },
+        py: { xs: 8, md: 10 },
       }}
-    >
-      {/* Hero Section */}
-      <Box
-        sx={{
-          textAlign: 'center',
-          py: { xs: 4, md: 6 },
-          maxWidth: '800px',
-          mx: 'auto',
-        }}
       >
-        <Typography
-          variant="h3"
-          sx={{ fontWeight: 'bold', mb: 2, fontSize: { xs: '2rem', md: '2.8rem', lg: '3.2rem' } }}
-        >
-          Building Scalable and Innovative Web Solutions
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 4, fontSize: { xs: '1rem', md: '1.2rem' } }}>
-          I specialize in building modern, responsive full-stack web applications from the ground up,
-          delivering robust REST APIs, dynamic UIs, and seamless user experiences. With expertise in
-          React, Laravel, MySQL, and AWS, I bring innovative ideas to life, tailored to meet your
-          unique requirements.
-        </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          sx={{ textTransform: 'none', fontWeight: 'bold' }}
-          href="#contact"
-        >
-          Contact Me
-        </Button>
-      </Box>
+      <Box
+  sx={{
+    display: 'flex',
+    flexDirection: { xs: 'column', md: 'row' },
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: theme.palette.background.default,
+    py: { xs: 4, md: 8 },
+    px: { xs: 2, sm: 4, md: 6 },
+  }}
+>
+  {/* Text Content */}
+  <Box
+  sx={{
+    flex: 1,
+    textAlign: { xs: 'center', md: 'left' },
+    pr: { xs: 0, md: 6 },
+    mb: { xs: 6, md: 0 },
+    py: { xs: 4, md: 6 },
+    backgroundColor: theme.palette.background.default,
+  }}
+>
+  <Typography
+    variant="h2"
+    sx={{
+      fontWeight: 'bold',
+      fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem', lg: '4rem' },
+      lineHeight: 1.2,
+      mb: 3,
+      color: theme.palette.primary.main,
+    }}
+  >
+    Transforming Ideas into Scalable Software
+  </Typography>
+  <Typography
+    variant="body1"
+    sx={{
+      fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.25rem' },
+      lineHeight: 1.6,
+      mb: 4,
+      color: theme.palette.text.primary,
+    }}
+  >
+    As a passionate Software Engineer, I specialize in crafting end-to-end web applications with 
+    modern technologies like React, Laravel, and AWS. From building highly efficient REST APIs to 
+    designing sleek, responsive UIs, I bring a solutions-driven approach to software development.
+    Whether you're looking to launch a startup, optimize your systems, or elevate user experiences, 
+    I’m here to help turn your vision into reality.
+  </Typography>
+  <Button
+    // variant="contained"
+    // size="large"
+    sx={{
+      textTransform: 'none',
+      fontWeight: 'bold',
+      px: 4,
+      py: 1.5,
+      fontSize: '1rem',
+      // backgroundColor: theme.palette.primary.dark,
+      // '&:hover': {
+        // backgroundColor: theme.palette.primary.main,
+      // },
+    }}
+    onClick={() => navigate('/contact')}
+  >
+    Let’s Build Something Amazing
+  </Button>
+</Box>
+
+
+  {/* Hero Image */}
+  {/* <Box
+    sx={{
+      flex: 1,
+      textAlign: 'center',
+      display: 'flex',
+      justifyContent: { xs: 'center', md: 'flex-end' },
+    }}
+  >
+    <img
+      src={HeroImage}
+      alt="Hero"
+      style={{
+        maxWidth: '100%',
+        height: 'auto',
+        borderRadius: '12px',
+        boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
+      }}
+    />
+  </Box> */}
+</Box>
 
       {/* Technology Stack Section */}
       <Box
@@ -269,22 +332,22 @@ const HomePage = () => {
         <Grid container spacing={4} justifyContent="center">
           {[
             {
-              title: 'EDU-Waves.com',
+              title: 'EDUWaves - AIM',
               description:
-                'A full-stack web application for educational organizations, including user registration, course applications, and research assistance.',
+                'A cutting-edge AI platform to transform education into a personalized and engaging experience. Empowering students, families, teachers, and schools, AIM makes learning more effective, interactive, and insightful than ever before.',
+              link: 'https://www.aim.edu-waves.com',
+            },
+            {
+              title: 'EDUWaves',
+              description:
+                'The official online registration platform for EDUWaves Education Consultancy, offering users access to services, course registrations, and online assistance.',
               link: 'https://www.edu-waves.com',
             },
             {
-              title: 'Primesketch.net',
+              title: 'PrimeSketch',
               description:
-                'Developed a complete portfolio website for a construction company, including an owner dashboard for real-time project and service management.',
-              link: 'https://www.primesketch.net',
-            },
-            {
-              title: 'Engineering Zone',
-              description:
-                'Built a full-stack mobile app and web dashboard using Flutter and Laravel for educational institutions.',
-              link: '#',
+                'A professional portfolio for PrimeSketch, a leading team of architects and designers known for their work in commercial showrooms, VIP villas, and corporate offices.',
+              link: 'https://primesketch.net',
             },
           ].map((project, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
@@ -311,7 +374,7 @@ const HomePage = () => {
                   target="_blank"
                   sx={{ textTransform: 'none', fontWeight: 'bold' }}
                 >
-                  View Project
+                  Visit Site
                 </Button>
               </Box>
             </Grid>
@@ -323,7 +386,8 @@ const HomePage = () => {
             color="primary"
             size="large"
             sx={{ textTransform: 'none', fontWeight: 'bold' }}
-            href="/projects"
+            // href="projects"
+            onClick={()=> {navigate('/projects')}}
           >
             View All Projects
           </Button>
@@ -343,7 +407,9 @@ const HomePage = () => {
           color="primary"
           size="large"
           sx={{ textTransform: 'none', fontWeight: 'bold' }}
-          href="#contact"
+          // href="contact"
+          onClick={()=> {navigate('/contact')}}
+
         >
           Contact Me
         </Button>

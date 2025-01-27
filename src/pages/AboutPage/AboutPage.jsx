@@ -1,9 +1,13 @@
 import React from 'react';
-import { Box, Typography, Grid, Avatar, Button, Divider } from '@mui/material';
+import { Box, Typography, Grid, Button, Divider } from '@mui/material';
 import { motion } from 'framer-motion';
 import profilePicture from '../../assets/images/profile.jpg'; // Replace with your actual profile image path
+import cvFile from '../../assets/files/CV.pdf'; // Import your CV file
+import { useNavigate } from 'react-router-dom';
 
 const AboutPage = () => {
+  const navigate = useNavigate();
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -12,8 +16,8 @@ const AboutPage = () => {
     >
       <Box
         sx={{
-          px: { xs: 3, sm: 5 },
-          py: { xs: 4, sm: 6 },
+          px: { xs: 2, sm: 4 },
+          py: { xs: 10, md: 12 },
           maxWidth: '1200px',
           mx: 'auto',
         }}
@@ -34,32 +38,31 @@ const AboutPage = () => {
         {/* Main About Section */}
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={4} sx={{ textAlign: 'center' }}>
-          <Box
-            sx={{
-              width: { xs: 150, sm: 200 },
-              height: { xs: 150, sm: 200 },
-              border: '2px solid',
-              borderColor: 'primary.main',
-              borderRadius: '50%',
-              mx: 'auto',
-              overflow: 'hidden',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <img
-              src={profilePicture}
-              alt="Profile Picture"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover', 
-                objectPosition: 'top', 
+            <Box
+              sx={{
+                width: { xs: 150, sm: 200 },
+                height: { xs: 150, sm: 200 },
+                border: '2px solid',
+                borderColor: 'primary.main',
+                borderRadius: '50%',
+                mx: 'auto',
+                overflow: 'hidden',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
-            />
-          </Box>
-
+            >
+              <img
+                src={profilePicture}
+                alt="Profile Picture"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'top',
+                }}
+              />
+            </Box>
           </Grid>
           <Grid item xs={12} md={8}>
             <Typography
@@ -82,7 +85,12 @@ const AboutPage = () => {
             </Typography>
             <Typography
               variant="body1"
-              sx={{ fontWeight: 'bold', color: 'text.secondary' }}
+              sx={{
+                fontWeight: 'bold',
+                color: 'text.secondary',
+                cursor: 'pointer',
+              }}
+              onClick={() => navigate('/contact')}
             >
               Let’s collaborate to build something exceptional!
             </Typography>
@@ -90,6 +98,8 @@ const AboutPage = () => {
         </Grid>
 
         <Divider sx={{ my: 5 }} />
+
+        
 
         {/* What I Do Section */}
         <Box>
@@ -139,7 +149,11 @@ const AboutPage = () => {
                 >
                   <Typography
                     variant="h6"
-                    sx={{ fontWeight: 'bold', mb: 2, color: 'primary.main' }}
+                    sx={{
+                      fontWeight: 'bold',
+                      mb: 2,
+                      color: 'primary.main',
+                    }}
                   >
                     {item.title}
                   </Typography>
@@ -150,71 +164,37 @@ const AboutPage = () => {
               </Grid>
             ))}
           </Grid>
+          <Divider sx={{ my: 5 }} />
+
         </Box>
-
-        <Divider sx={{ my: 5 }} />
-
-        {/* Personal Values */}
-        <Box>
+        {/* Download CV Section */}
+        <Box sx={{ textAlign: 'center', mb: 5 }}>
           <Typography
             variant="h4"
             sx={{
-              textAlign: 'center',
               fontWeight: 'bold',
-              mb: 4,
+              my: 5,
               fontSize: { xs: '1.5rem', md: '2rem' },
             }}
           >
-            My Values
+            Download My CV
           </Typography>
           <Typography
             variant="body1"
-            sx={{ textAlign: 'center', color: 'text.primary', mb: 4 }}
+            sx={{ mb: 3, color: 'text.primary' }}
           >
-            These are the core principles that guide my work and define my
-            approach to problem-solving.
+            Click the button below to download my detailed CV and learn more
+            about my experience and skills.
           </Typography>
-          <Grid container spacing={4}>
-            {['Quality', 'Innovation', 'Collaboration', 'Integrity'].map(
-              (value, index) => (
-                <Grid item xs={6} sm={3} key={index}>
-                  <Box
-                    sx={{
-                      p: 8,
-                      backgroundColor: 'action.hover',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      textAlign: 'center',
-                      height: 100,
-                      width: 100,
-                      mx: 'auto',
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={{ fontWeight: 'bold', color: 'primary.main', fontSize: '1.1rem' }}
-                    >
-                      {value}
-                    </Typography>
-                  </Box>
-                </Grid>
-              )
-            )}
-          </Grid>
-        </Box>
-
-        {/* Call to Action */}
-        <Box sx={{ textAlign: 'center', mt: 6 }}>
           <Button
             variant="contained"
             color="primary"
             size="large"
             sx={{ textTransform: 'none', fontWeight: 'bold' }}
-            href="#contact"
+            href={cvFile}
+            download="Husam_Takaji_CV.pdf"
           >
-            Get in Touch
+            Download CV
           </Button>
         </Box>
       </Box>

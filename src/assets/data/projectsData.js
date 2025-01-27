@@ -39,7 +39,7 @@ const generateImagePaths = (basePath, count) => {
       title: 'EZone',
       description:
         'An international platform offering academic services, e-courses, anonymous teacher-student chats, and academic project consultations for students worldwide.',
-      link: '#',
+      link: '',
       images: [
         ...generateImagePaths('/images/projects/EZone/mobile', 17),
         ...generateImagePaths('/images/projects/EZone/dashboard', 17),
@@ -49,7 +49,7 @@ const generateImagePaths = (basePath, count) => {
       title: 'Car Care Center',
       description:
         'A comprehensive platform for car maintenance services, offering users access to car care services, maintenance tips, and service bookings.',
-      link: '#',
+      link: '',
       images: [
         ...generateImagePaths('/images/projects/CarCare', 4),
       ],
@@ -58,7 +58,7 @@ const generateImagePaths = (basePath, count) => {
       title: 'Businees Support System',
       description:
         'This is a frontdesk system for any business. It is a system that helps in managing the business. It has features like managing finances, managing HR Affairs like: Leave, Payroll, Recruitment, etc. It also has a feature of managing the business projects and tasks.',
-      link: '#',
+      link: '',
       images: [
         ...generateImagePaths('/images/projects/BusineesSupport', 15),
       ],

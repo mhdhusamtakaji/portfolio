@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Box, Grid, Typography, Button, Divider, Pagination, Modal, IconButton } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { Box, Grid, Typography, Pagination, Modal, IconButton, Link } from '@mui/material';
 import { motion } from 'framer-motion';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -37,8 +37,15 @@ const ProjectsPage = () => {
     );
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <Box sx={{ px: { xs: 2, md: 6 }, py: { xs: 4, md: 6 }, maxWidth: '1200px', mx: 'auto' }}>
+    <Box sx={{ 
+      px: { xs: 2, sm: 4 },
+      py: { xs: 10, md: 12 },
+       maxWidth: '1200px', mx: 'auto' }}>
       <Typography
         variant="h3"
         sx={{
@@ -79,9 +86,6 @@ const ProjectsPage = () => {
                     textDecoration: 'none',
                     color: selectedProject === project ? 'primary.contrastText' : 'text.primary',
                   }}
-                  component="a"
-                  href={project.link}
-                  target="_blank"
                 >
                   {project.title}
                 </Typography>
@@ -108,6 +112,23 @@ const ProjectsPage = () => {
               boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
             }}
           >
+            {/* Display the Project Link if available */}
+            {selectedProject.link && (
+              <Typography
+                variant="body1"
+                sx={{
+                  mb: 2,
+                  color: 'text.primary',
+                  textAlign: 'center',
+                }}
+              >
+                Check it out at:{' '}
+                <Link href={selectedProject.link} target="_blank" rel="noopener">
+                  {selectedProject.link}
+                </Link>
+              </Typography>
+            )}
+
             <img
               src={selectedProject.images[currentImageIndex]}
               alt={selectedProject.title}
