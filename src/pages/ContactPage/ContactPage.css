@@ -1,0 +1,25 @@
+.contact-container {
+  padding: 40px 20px !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+}
+
+.contact-heading {
+  text-align: center !important;
+  margin-bottom: 30px !important;
+}
+
+form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+}
+
+button {
+  font-weight: bold !important;
+  transition: background-color 0.3s ease !important;
+}
+
+button:hover {
+  background-color: #004b8c !important;
+}
