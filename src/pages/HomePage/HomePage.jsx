@@ -89,6 +89,7 @@ const HomePage = () => {
             maxWidth: "1200px",
             mx: "auto",
             textAlign: "center",
+            marginTop: "100px",
           }}
         >
           {/* Greeting */}

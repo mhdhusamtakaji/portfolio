@@ -2,21 +2,29 @@
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
+    width: 100% !important;
+    padding: 0 !important;
   }
   
   .logo-container {
     display: flex !important;
     align-items: center !important;
+    flex-shrink: 0 !important;
+    padding: 0 8px !important;
   }
   
   .nav-links {
     display: flex !important;
-    gap: 15px !important;
+    gap: 8px !important;
+    align-items: center !important;
   }
   
   .nav-links button {
     font-weight: 500 !important;
     transition: all 0.3s ease-in-out !important;
+    min-width: 80px !important;
+    padding: 8px 12px !important;
+    font-size: 0.9rem !important;
   }
   
   .nav-links button:hover {
@@ -28,7 +36,7 @@
   }
   
   .drawer-list {
-    width: 250px !important;
+    width: 280px !important;
   }
   
   .drawer-list .MuiListItem-button {
@@ -43,14 +51,49 @@
   .drawer-list .MuiListItem-button.active {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
   }
-  
-  @media (max-width: 700px) {
+
+  /* Tablet and small desktop */
+  @media (max-width: 1024px) {
+    .nav-links {
+      gap: 4px !important;
+    }
+    
+    .nav-links button {
+      min-width: 70px !important;
+      padding: 6px 8px !important;
+      font-size: 0.85rem !important;
+    }
+  }
+
+  /* Mobile landscape */
+  @media (max-width: 768px) {
     .nav-links {
       display: none !important;
     }
   
     .menu-icon {
       display: block !important;
+      margin-left: 8px !important;
+    }
+
+    .logo-container {
+      flex: 1 !important;
+      padding: 0 12px !important;
+    }
+
+    .logo-container h6 {
+      font-size: 1rem !important;
+    }
+  }
+
+  /* Mobile portrait */
+  @media (max-width: 480px) {
+    .logo-container h6 {
+      font-size: 0.9rem !important;
+    }
+
+    .logo-container .MuiTypography-h6:first-of-type {
+      font-size: 1.2rem !important;
     }
   }
   
